@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('partials/head.ejs') %>
+<body>
+  <%- include('partials/nav.ejs') %>
+
+  <div class="create-message">
+    <form action="/new" method="POST">
+      <label for="author">Author:</label>
+      <input type="text" id="author" name="author" required>
+      <label for="message">Message:</label>
+      <textarea id="message" name="message" required></textarea>
+      <button>Send</button>
+    </form>
+  </div>
+</body>
+</html>

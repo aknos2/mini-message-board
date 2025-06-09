@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('partials/head.ejs') %>
+<body>
+  <%- include('partials/nav.ejs') %>
+
+  <div class="message-board">
+    <%  if (messages.length > 0) { %>
+    <% messages.forEach(message => { %>
+      <div class="message-wrap">
+        <div class="name-date">
+          <p class="name"><%= message.user %>: </p>
+          <p class="date"><em><%= message.added %></em></p>
+          <a href="/log/<%= message.user %>"><button class="open-btn">Log</button></a>
+        </div>
+        <p class="text"><%= message.text %></p>
+      </div>
+      <hr>
+    <% }) %>
+    <% } %>
+  </div>
+
+</body>
+</html>

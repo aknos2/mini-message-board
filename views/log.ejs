@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('partials/head.ejs') %>
+
+  <body>
+    <%- include('partials/nav.ejs') %>
+
+    <div class="log">
+      <h2>Messages from <%= username %></h2>
+
+      <% if (messages.length === 0) { %>
+        <p>No messages from this user.</p>
+      <% } else { %>
+        <ul>
+          <% messages.forEach(message => { %>
+            <li>
+              <strong><%= message.user %></strong>: <%= message.text %> <em>(<%= message.added %>)</em>
+            </li>
+          <% }) %>
+        </ul>
+      <% } %>
+    </div>
+
+    <a class="back-home" href="/">Back to home</a>
+  </body>
+</html>
