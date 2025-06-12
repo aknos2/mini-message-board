@@ -1,8 +1,6 @@
 import { Router } from "express";
-import { messages } from "../views/data/messages.js";
+import { displayMessages } from "../controllers/logController.js";
 
 export const indexRouter = Router();
 
-indexRouter.get('/', (req, res) => {
-  res.render('index', { title: "Mini Messageboard", messages });
-});
+indexRouter.get('/', displayMessages);

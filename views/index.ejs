@@ -5,8 +5,8 @@
   <%- include('partials/nav.ejs') %>
 
   <div class="message-board">
-    <%  if (messages.length > 0) { %>
-    <% messages.forEach(message => { %>
+    <%  if (allMessages.length > 0) { %>
+    <% allMessages.forEach(message => { %>
       <div class="message-wrap">
         <div class="name-date">
           <p class="name"><%= message.user %>: </p>

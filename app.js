@@ -20,7 +20,7 @@ app.use('/', indexRouter);
 app.use('/new', formRouter);
 app.use('/log', logRouter);
 
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 app.listen(PORT, (req, res) => {
   console.log(`Listening on port ${PORT}`);
 });
@@ -29,3 +29,4 @@ app.use((err, req, res, next) => {
   console.error(err);
   res.status(err.statusCode || 500).send(err.message);
 });
+
