@@ -5,6 +5,9 @@
   <%- include('partials/nav.ejs') %>
 
   <div class="create-message">
+
+    <%- include("partials/errors.ejs") %>
+    
     <form action="/new" method="POST">
       <label for="author">Author:</label>
       <input type="text" id="author" name="author" required>
@@ -12,6 +15,7 @@
       <textarea id="message" name="message" required></textarea>
       <button>Send</button>
     </form>
+
   </div>
 </body>
 </html>
